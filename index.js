@@ -108,6 +108,9 @@ for (let x = 0; x < finances.length; x++) {
   totalProfitLoss = totalProfitLoss + finances[0][1];
 }
 
+//Assign a value to average change
+avgChange = totalProfitLoss / totalMonths - 1;
+
 // Create another loop for profit increase / decrease
 for (let i = 1; i < finances.length; i++) {
   let currentMonthProfit = finances[i][1];
@@ -137,14 +140,22 @@ console.log("Total months: " + totalMonths);
 // Total Value
 console.log("Total: " + totalProfitLoss);
 
-// Greatest increase in Profit
-console.log("Greatest increase in profits:", greatestIncrease);
+// Average change
+console.log("The average change is :" + avgChange);
 
-// Month of greatest increase
-console.log("Month with the greatest increase:", greatestIncreaseMonth);
+// // Greatest increase in Profit
+// console.log(
+//   "Greatest increase in Profits/ Losses:",
+//   greatestIncrease,
+//   greatestIncreaseMonth
+// );
 
-// Greatest decreae in profit
-console.log("Greatest decrease in profits:", greatestIncrease);
+// Greatest Increase in profit
+console.log(
+  `Greatest Increase in profits: ${greatestIncreaseMonth} (${greatestIncrease})`
+);
 
-// Month of greatest decrease
-console.log("Month with the greatest decrease:", greatestIncreaseMonth);
+// Greatest Decrease in profit
+console.log(
+  `Greatest Decrease in profits: ${greatestDecreaseMonth} (${greatestDecrease})`
+);
