@@ -156,3 +156,17 @@ console.log(
 console.log(
   `Greatest Decrease in profits: ${greatestDecreaseMonth} ($-${greatestDecrease})`
 );
+
+// Additional code to show in html as well as console
+
+let totalMonthsEl = document.querySelector(".totalMonths");
+let totalValueEl = document.querySelector(".totalValue");
+let avgChangeEl = document.querySelector(".avgChange");
+let greatestIncreaseEl = document.querySelector(".greatestIncrease");
+let greatestDecreaseEl = document.querySelector(".greatestDecrease");
+
+totalMonthsEl.innerHTML = `Total months: ${totalMonths}`;
+totalValueEl.innerHTML = `Total: ${totalProfitLoss}`;
+avgChangeEl.innerHTML = `The average change is: $ ${avgChange.toFixed(2)}`;
+greatestIncreaseEl.innerHTML = `Greatest Increase in profits: ${greatestIncreaseMonth} ($${greatestIncrease})`;
+greatestDecreaseEl.innerHTML = `Greatest Increase in profits: ${greatestIncreaseMonth} ($${greatestIncrease})`;
