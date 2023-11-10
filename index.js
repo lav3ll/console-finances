@@ -93,6 +93,11 @@ let totalMonths = 0;
 let totalProfitLoss = 0;
 let profitLoss = 0;
 let avgChange = 0;
+let greatestIncrease = 0;
+let greatestIncreaseMonth = "";
+let greatestDecrease = 0;
+let greatestDecreaseMonth = "";
+
 // Create a loop to iterate over array
 
 for (let x = 0; x < finances.length; x++) {
@@ -103,5 +108,43 @@ for (let x = 0; x < finances.length; x++) {
   totalProfitLoss = totalProfitLoss + finances[0][1];
 }
 
+// Create another loop for profit increase / decrease
+for (let i = 1; i < finances.length; i++) {
+  let currentMonthProfit = finances[i][1];
+  let previousMonthProfit = finances[i - 1][1];
+
+  // Define a variable for increase
+  let increase = currentMonthProfit - previousMonthProfit;
+
+  // Define a variable for decrease
+  let decrease = previousMonthProfit - currentMonthProfit;
+
+  if (increase > greatestIncrease) {
+    greatestIncrease = increase;
+    greatestIncreaseMonth = finances[i][0];
+  }
+  if (decrease > greatestDecrease) {
+    greatestDecrease = decrease;
+    greatestDecreaseMonth = finances[i][0];
+  }
+}
+
+// log the financial information to the console for the user to see
+
+//Total Months
 console.log("Total months: " + totalMonths);
+
+// Total Value
 console.log("Total: " + totalProfitLoss);
+
+// Greatest increase in Profit
+console.log("Greatest increase in profits:", greatestIncrease);
+
+// Month of greatest increase
+console.log("Month with the greatest increase:", greatestIncreaseMonth);
+
+// Greatest decreae in profit
+console.log("Greatest decrease in profits:", greatestIncrease);
+
+// Month of greatest decrease
+console.log("Month with the greatest decrease:", greatestIncreaseMonth);
