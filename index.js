@@ -88,18 +88,16 @@ var finances = [
 ];
 
 // Create variables to hold returned values
-
 let totalMonths = 0;
 let totalProfitLoss = 0;
-let profitLoss = 0;
 let avgChange = 0;
 let greatestIncrease = 0;
 let greatestIncreaseMonth = "";
 let greatestDecrease = 0;
 let greatestDecreaseMonth = "";
+let totalChange = 0;
 
 // Create a loop to iterate over array
-
 for (let x = 0; x < finances.length; x++) {
   // Add one months counter for each item in array
   totalMonths++;
@@ -108,13 +106,16 @@ for (let x = 0; x < finances.length; x++) {
   totalProfitLoss = totalProfitLoss + finances[x][1];
 }
 
-//Assign a value to average change
-avgChange = totalProfitLoss / totalMonths - 1;
-
 // Create another loop for profit increase / decrease
 for (let i = 1; i < finances.length; i++) {
   let currentMonthProfit = finances[i][1];
   let previousMonthProfit = finances[i - 1][1];
+
+  // Keep track of total change in profits each month
+  let change = currentMonthProfit - previousMonthProfit;
+
+  // Accumulate the change for each month
+  totalChange += change;
 
   // Define a variable for increase
   let increase = currentMonthProfit - previousMonthProfit;
@@ -132,30 +133,26 @@ for (let i = 1; i < finances.length; i++) {
   }
 }
 
+// Assign a value to average change
+avgChange = totalChange / (totalMonths - 1);
+
 // log the financial information to the console for the user to see
 
-//Total Months
+// Total Months
 console.log("Total months: " + totalMonths);
 
 // Total Value
 console.log("Total: " + totalProfitLoss);
 
 // Average change
-console.log("The average change is :" + avgChange);
-
-// // Greatest increase in Profit
-// console.log(
-//   "Greatest increase in Profits/ Losses:",
-//   greatestIncrease,
-//   greatestIncreaseMonth
-// );
+console.log("The average change is: $" + avgChange.toFixed(2));
 
 // Greatest Increase in profit
 console.log(
-  `Greatest Increase in profits: ${greatestIncreaseMonth} (${greatestIncrease})`
+  `Greatest Increase in profits: ${greatestIncreaseMonth} ($${greatestIncrease})`
 );
 
 // Greatest Decrease in profit
 console.log(
-  `Greatest Decrease in profits: ${greatestDecreaseMonth} (${greatestDecrease})`
+  `Greatest Decrease in profits: ${greatestDecreaseMonth} ($-${greatestDecrease})`
 );
