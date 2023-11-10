@@ -105,7 +105,7 @@ for (let x = 0; x < finances.length; x++) {
   totalMonths++;
 
   // Update the profit/loss variable
-  totalProfitLoss = totalProfitLoss + finances[0][1];
+  totalProfitLoss = totalProfitLoss + finances[x][1];
 }
 
 //Assign a value to average change
