@@ -88,6 +88,15 @@ var finances = [
 ];
 
 // Create variables to hold returned values
+
 let totalMonths = 0;
 let totalProfitLoss = 0;
 let profitLoss = 0;
+
+// Create a loop to iterate over array
+
+for (let x = 0; x < finances.length; x++) {
+  // Add one months counter for each item in array
+  totalMonths++;
+  console.log(totalMonths);
+}
