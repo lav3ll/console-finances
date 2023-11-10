@@ -92,11 +92,16 @@ var finances = [
 let totalMonths = 0;
 let totalProfitLoss = 0;
 let profitLoss = 0;
-
+let avgChange = 0;
 // Create a loop to iterate over array
 
 for (let x = 0; x < finances.length; x++) {
   // Add one months counter for each item in array
   totalMonths++;
-  console.log(totalMonths);
+
+  // Update the profit/loss variable
+  totalProfitLoss = totalProfitLoss + finances[0][1];
 }
+
+console.log("Total months: " + totalMonths);
+console.log("Total: " + totalProfitLoss);
