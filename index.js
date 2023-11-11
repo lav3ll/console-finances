@@ -167,8 +167,8 @@ let greatestIncreaseEl = document.querySelector(".greatestIncrease");
 let greatestDecreaseEl = document.querySelector(".greatestDecrease");
 
 // Assign values to HTML elements
-totalMonthsEl.innerHTML = `Total months: ${totalMonths}`;
-totalValueEl.innerHTML = `Total: ${totalProfitLoss}`;
-avgChangeEl.innerHTML = `The average change is: $ ${avgChange.toFixed(2)}`;
-greatestIncreaseEl.innerHTML = `Greatest Increase in profits: ${greatestIncreaseMonth} ($${greatestIncrease})`;
-greatestDecreaseEl.innerHTML = `Greatest Decrease in profits: ${greatestDecreaseMonth} ($-${greatestDecrease})`;
+totalMonthsEl.innerHTML = `Total Months: ${totalMonths}`;
+totalValueEl.innerHTML = `Total: $${totalProfitLoss}`;
+avgChangeEl.innerHTML = `Aveage change: $ ${avgChange.toFixed(2)}`;
+greatestIncreaseEl.innerHTML = `Greatest Increase in Profits/Losses: ${greatestIncreaseMonth} ($${greatestIncrease})`;
+greatestDecreaseEl.innerHTML = `Greatest Decrease in Profits/Losses: ${greatestDecreaseMonth} ($-${greatestDecrease})`;
