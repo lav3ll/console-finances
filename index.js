@@ -142,19 +142,19 @@ avgChange = totalChange / (totalMonths - 1);
 console.log("Total months: " + totalMonths);
 
 // Total Value
-console.log("Total: " + totalProfitLoss);
+console.log(`Total: $${totalProfitLoss}`);
 
 // Average change
-console.log("The average change is: $" + avgChange.toFixed(2));
+console.log(`Aveage change: $ ${avgChange.toFixed(2)}`);
 
 // Greatest Increase in profit
 console.log(
-  `Greatest Increase in profits: ${greatestIncreaseMonth} ($${greatestIncrease})`
+  `Greatest Increase in Profits/Losses: ${greatestIncreaseMonth} ($${greatestIncrease})`
 );
 
 // Greatest Decrease in profit
 console.log(
-  `Greatest Decrease in profits: ${greatestDecreaseMonth} ($-${greatestDecrease})`
+  `Greatest Decrease in Profits/Losses: ${greatestDecreaseMonth} ($-${greatestDecrease})`
 );
 
 // Additional code to show in html as well as console
@@ -169,6 +169,6 @@ let greatestDecreaseEl = document.querySelector(".greatestDecrease");
 // Assign values to HTML elements
 totalMonthsEl.innerHTML = `Total Months: ${totalMonths}`;
 totalValueEl.innerHTML = `Total: $${totalProfitLoss}`;
-avgChangeEl.innerHTML = `Aveage change: $ ${avgChange.toFixed(2)}`;
+avgChangeEl.innerHTML = `Average change: $ ${avgChange.toFixed(2)}`;
 greatestIncreaseEl.innerHTML = `Greatest Increase in Profits/Losses: ${greatestIncreaseMonth} ($${greatestIncrease})`;
 greatestDecreaseEl.innerHTML = `Greatest Decrease in Profits/Losses: ${greatestDecreaseMonth} ($-${greatestDecrease})`;
